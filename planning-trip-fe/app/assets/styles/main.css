@@ -1,0 +1,250 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --pt-gold: #d79922;
+    --pt-gold-light: #f4d89a;
+    --pt-gold-dark: #a67620;
+    --pt-cream: #efe2ba;
+    --pt-cream-light: #faf7e8;
+    --pt-cream-dark: #d9cc9a;
+    --pt-red: #f13c20;
+    --pt-red-light: #f97259;
+    --pt-red-dark: #c91811;
+    --pt-blue: #4056a1;
+    --pt-blue-light: #6e7ec9;
+    --pt-blue-dark: #2a3570;
+    --pt-lavender: #c5cbe3;
+    --pt-lavender-light: #e0e4f0;
+    --pt-lavender-dark: #8a92bd;
+    --pt-ink: #344B93;
+    --pt-ink-light: #5f6b88;
+    --pt-teal: #3db8a6;
+    --pt-teal-light: #6fd4bf;
+    --pt-teal-dark: #2a8573;
+    --pt-orange: #e8883f;
+    --pt-orange-light: #f5a76e;
+    --pt-orange-dark: #c9622a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#EFE2BA]/35 text-[#1F2340] antialiased;
+    font-family:
+      'Plus Jakarta Sans',
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Gold */
+  .text-pt-gold {
+    color: var(--pt-gold);
+  }
+
+  .bg-pt-gold {
+    background-color: var(--pt-gold);
+  }
+
+  .text-pt-gold-light {
+    color: var(--pt-gold-light);
+  }
+
+  .bg-pt-gold-light {
+    background-color: var(--pt-gold-light);
+  }
+
+  .text-pt-gold-dark {
+    color: var(--pt-gold-dark);
+  }
+
+  .bg-pt-gold-dark {
+    background-color: var(--pt-gold-dark);
+  }
+
+  /* Cream */
+  .text-pt-cream {
+    color: var(--pt-cream);
+  }
+
+  .bg-pt-cream {
+    background-color: var(--pt-cream);
+  }
+
+  .text-pt-cream-light {
+    color: var(--pt-cream-light);
+  }
+
+  .bg-pt-cream-light {
+    background-color: var(--pt-cream-light);
+  }
+
+  .text-pt-cream-dark {
+    color: var(--pt-cream-dark);
+  }
+
+  .bg-pt-cream-dark {
+    background-color: var(--pt-cream-dark);
+  }
+
+  /* Red */
+  .text-pt-red {
+    color: var(--pt-red);
+  }
+
+  .bg-pt-red {
+    background-color: var(--pt-red);
+  }
+
+  .text-pt-red-light {
+    color: var(--pt-red-light);
+  }
+
+  .bg-pt-red-light {
+    background-color: var(--pt-red-light);
+  }
+
+  .text-pt-red-dark {
+    color: var(--pt-red-dark);
+  }
+
+  .bg-pt-red-dark {
+    background-color: var(--pt-red-dark);
+  }
+
+  /* Blue */
+  .text-pt-blue {
+    color: var(--pt-blue);
+  }
+
+  .bg-pt-blue {
+    background-color: var(--pt-blue);
+  }
+
+  .text-pt-blue-light {
+    color: var(--pt-blue-light);
+  }
+
+  .bg-pt-blue-light {
+    background-color: var(--pt-blue-light);
+  }
+
+  .text-pt-blue-dark {
+    color: var(--pt-blue-dark);
+  }
+
+  .bg-pt-blue-dark {
+    background-color: var(--pt-blue-dark);
+  }
+
+  /* Lavender */
+  .text-pt-lavender {
+    color: var(--pt-lavender);
+  }
+
+  .bg-pt-lavender {
+    background-color: var(--pt-lavender);
+  }
+
+  .text-pt-lavender-light {
+    color: var(--pt-lavender-light);
+  }
+
+  .bg-pt-lavender-light {
+    background-color: var(--pt-lavender-light);
+  }
+
+  .text-pt-lavender-dark {
+    color: var(--pt-lavender-dark);
+  }
+
+  .bg-pt-lavender-dark {
+    background-color: var(--pt-lavender-dark);
+  }
+
+  /* Ink */
+  .text-pt-ink {
+    color: var(--pt-ink);
+  }
+
+  .bg-pt-ink {
+    background-color: var(--pt-ink);
+  }
+
+  .text-pt-ink-light {
+    color: var(--pt-ink-light);
+  }
+
+  .bg-pt-ink-light {
+    background-color: var(--pt-ink-light);
+  }
+
+  /* Teal (new primary accent) */
+  .text-pt-teal {
+    color: var(--pt-teal);
+  }
+
+  .bg-pt-teal {
+    background-color: var(--pt-teal);
+  }
+
+  .text-pt-teal-light {
+    color: var(--pt-teal-light);
+  }
+
+  .bg-pt-teal-light {
+    background-color: var(--pt-teal-light);
+  }
+
+  .text-pt-teal-dark {
+    color: var(--pt-teal-dark);
+  }
+
+  .bg-pt-teal-dark {
+    background-color: var(--pt-teal-dark);
+  }
+
+  /* Orange (secondary warm tone) */
+  .text-pt-orange {
+    color: var(--pt-orange);
+  }
+
+  .bg-pt-orange {
+    background-color: var(--pt-orange);
+  }
+
+  .text-pt-orange-light {
+    color: var(--pt-orange-light);
+  }
+
+  .bg-pt-orange-light {
+    background-color: var(--pt-orange-light);
+  }
+
+  .text-pt-orange-dark {
+    color: var(--pt-orange-dark);
+  }
+
+  .bg-pt-orange-dark {
+    background-color: var(--pt-orange-dark);
+  }
+}
