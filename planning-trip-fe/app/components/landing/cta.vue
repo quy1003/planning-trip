@@ -12,7 +12,7 @@
     <div
       class="section-shell relative z-10 flex min-h-[260px] flex-col items-center pt-0 md:pt-6 text-center sm:min-h-[300px]"
     >
-      <h2 class="font-display text-4xl text-pt-white font-bold sm:text-5xl">
+      <h2 class="text-balance font-roboto text-4xl text-pt-white font-bold sm:text-5xl">
         Sẵn sàng cho chuyến đi tiếp theo?
       </h2>
 

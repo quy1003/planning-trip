@@ -70,7 +70,7 @@ const features = [
 
     <div class="section-shell relative z-10">
       <div class="mx-auto max-w-3xl text-center">
-        <h2 class="font-display text-4xl font-bold text-white sm:text-5xl">
+        <h2 class="font-roboto text-balance text-4xl font-bold text-white sm:text-5xl">
           Mọi thứ bạn cần cho một chuyến đi hoàn hảo
         </h2>
       </div>

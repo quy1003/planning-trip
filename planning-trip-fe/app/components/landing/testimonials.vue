@@ -39,7 +39,7 @@ const items = [
   <section id="testimonials" class="bg-white py-20 sm:py-24">
     <div class="section-shell">
       <div class="mx-auto max-w-3xl text-center">
-        <h2 class="font-display text-pt-orange text-4xl font-bold text-pt-ink sm:text-5xl">
+        <h2 class="font-roboto text-balance text-pt-orange text-4xl font-bold text-pt-ink sm:text-5xl">
           Được yêu thích bởi hàng nghìn người dùng
         </h2>
       </div>
@@ -53,10 +53,10 @@ const items = [
           <div class="mb-3 flex gap-1 text-pt-gold">
             <Star v-for="n in 5" :key="n" class="h-4 w-4 fill-current" />
           </div>
-          <p class="text-sm leading-relaxed text-pt-ink">"{{ item.text }}"</p>
+          <p class="text-sm leading-relaxed text-black">"{{ item.text }}"</p>
           <div class="mt-4 border-t border-[#C5CBE3] pt-3">
-            <p class="text-sm font-bold text-pt-ink">{{ item.name }}</p>
-            <p class="text-xs text-[#656B8D]">{{ item.role }}</p>
+            <p class="text-sm font-bold text-pt-orange">{{ item.name }}</p>
+            <p class="text-xs text-pt-orange">{{ item.role }}</p>
           </div>
         </article>
       </div>

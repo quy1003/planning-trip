@@ -11,6 +11,7 @@ import (
 type Repository interface {
 	List(ctx context.Context) ([]model.User, error)
 	GetByID(ctx context.Context, id string) (model.User, error)
+	GetByEmail(ctx context.Context, email string) (model.User, error)
 	Create(ctx context.Context, user *model.User) error
 	Update(ctx context.Context, id string, updates map[string]interface{}) (model.User, error)
 	Delete(ctx context.Context, id string) error
@@ -33,6 +34,12 @@ func (r *gormRepository) List(ctx context.Context) ([]model.User, error) {
 func (r *gormRepository) GetByID(ctx context.Context, id string) (model.User, error) {
 	var user model.User
 	err := r.db.WithContext(ctx).First(&user, "id = ?", id).Error
+	return user, err
+}
+
+func (r *gormRepository) GetByEmail(ctx context.Context, email string) (model.User, error) {
+	var user model.User
+	err := r.db.WithContext(ctx).First(&user, "email = ?", email).Error
 	return user, err
 }
 

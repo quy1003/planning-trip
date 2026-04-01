@@ -1,21 +1,12 @@
-﻿<template>
-  <div class="app-shell">
-    <AppHeader />
-    <main class="app-main">
-      <slot />
-    </main>
+<script setup lang="ts">
+import Header from '../components/layout/header.vue'
+import Footer from '../components/layout/footer.vue'
+</script>
+
+<template>
+  <div class="min-h-screen bg-[#EFE2BA]/35">
+    <Header />
+    <slot />
+    <Footer />
   </div>
 </template>
-
-<style scoped>
-.app-shell {
-  min-height: 100vh;
-  background: radial-gradient(circle at top right, #eef6ff 0%, #f7fbff 35%, #ffffff 100%);
-}
-
-.app-main {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 24px 16px 40px;
-}
-</style>

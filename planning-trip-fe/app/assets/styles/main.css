@@ -65,6 +65,10 @@
     background-color: var(--pt-gold);
   }
 
+  .border-pt-gold {
+    border-color: var(--pt-gold);
+  }
+
   .text-pt-gold-light {
     color: var(--pt-gold-light);
   }
@@ -73,12 +77,20 @@
     background-color: var(--pt-gold-light);
   }
 
+  .border-pt-gold-light {
+    border-color: var(--pt-gold-light);
+  }
+
   .text-pt-gold-dark {
     color: var(--pt-gold-dark);
   }
 
   .bg-pt-gold-dark {
     background-color: var(--pt-gold-dark);
+  }
+
+  .border-pt-gold-dark {
+    border-color: var(--pt-gold-dark);
   }
 
   /* Cream */
@@ -90,6 +102,10 @@
     background-color: var(--pt-cream);
   }
 
+  .border-pt-cream {
+    border-color: var(--pt-cream);
+  }
+
   .text-pt-cream-light {
     color: var(--pt-cream-light);
   }
@@ -98,12 +114,20 @@
     background-color: var(--pt-cream-light);
   }
 
+  .border-pt-cream-light {
+    border-color: var(--pt-cream-light);
+  }
+
   .text-pt-cream-dark {
     color: var(--pt-cream-dark);
   }
 
   .bg-pt-cream-dark {
     background-color: var(--pt-cream-dark);
+  }
+
+  .border-pt-cream-dark {
+    border-color: var(--pt-cream-dark);
   }
 
   /* Red */
@@ -115,6 +139,10 @@
     background-color: var(--pt-red);
   }
 
+  .border-pt-red {
+    border-color: var(--pt-red);
+  }
+
   .text-pt-red-light {
     color: var(--pt-red-light);
   }
@@ -123,12 +151,20 @@
     background-color: var(--pt-red-light);
   }
 
+  .border-pt-red-light {
+    border-color: var(--pt-red-light);
+  }
+
   .text-pt-red-dark {
     color: var(--pt-red-dark);
   }
 
   .bg-pt-red-dark {
     background-color: var(--pt-red-dark);
+  }
+
+  .border-pt-red-dark {
+    border-color: var(--pt-red-dark);
   }
 
   /* Blue */
@@ -140,6 +176,10 @@
     background-color: var(--pt-blue);
   }
 
+  .border-pt-blue {
+    border-color: var(--pt-blue);
+  }
+
   .text-pt-blue-light {
     color: var(--pt-blue-light);
   }
@@ -148,12 +188,20 @@
     background-color: var(--pt-blue-light);
   }
 
+  .border-pt-blue-light {
+    border-color: var(--pt-blue-light);
+  }
+
   .text-pt-blue-dark {
     color: var(--pt-blue-dark);
   }
 
   .bg-pt-blue-dark {
     background-color: var(--pt-blue-dark);
+  }
+
+  .border-pt-blue-dark {
+    border-color: var(--pt-blue-dark);
   }
 
   /* Lavender */
@@ -165,6 +213,10 @@
     background-color: var(--pt-lavender);
   }
 
+  .border-pt-lavender {
+    border-color: var(--pt-lavender);
+  }
+
   .text-pt-lavender-light {
     color: var(--pt-lavender-light);
   }
@@ -173,12 +225,20 @@
     background-color: var(--pt-lavender-light);
   }
 
+  .border-pt-lavender-light {
+    border-color: var(--pt-lavender-light);
+  }
+
   .text-pt-lavender-dark {
     color: var(--pt-lavender-dark);
   }
 
   .bg-pt-lavender-dark {
     background-color: var(--pt-lavender-dark);
+  }
+
+  .border-pt-lavender-dark {
+    border-color: var(--pt-lavender-dark);
   }
 
   /* Ink */
@@ -190,12 +250,20 @@
     background-color: var(--pt-ink);
   }
 
+  .border-pt-ink {
+    border-color: var(--pt-ink);
+  }
+
   .text-pt-ink-light {
     color: var(--pt-ink-light);
   }
 
   .bg-pt-ink-light {
     background-color: var(--pt-ink-light);
+  }
+
+  .border-pt-ink-light {
+    border-color: var(--pt-ink-light);
   }
 
   /* Teal (new primary accent) */
@@ -207,6 +275,10 @@
     background-color: var(--pt-teal);
   }
 
+  .border-pt-teal {
+    border-color: var(--pt-teal);
+  }
+
   .text-pt-teal-light {
     color: var(--pt-teal-light);
   }
@@ -215,12 +287,20 @@
     background-color: var(--pt-teal-light);
   }
 
+  .border-pt-teal-light {
+    border-color: var(--pt-teal-light);
+  }
+
   .text-pt-teal-dark {
     color: var(--pt-teal-dark);
   }
 
   .bg-pt-teal-dark {
     background-color: var(--pt-teal-dark);
+  }
+
+  .border-pt-teal-dark {
+    border-color: var(--pt-teal-dark);
   }
 
   /* Orange (secondary warm tone) */
@@ -232,6 +312,10 @@
     background-color: var(--pt-orange);
   }
 
+  .border-pt-orange {
+    border-color: var(--pt-orange);
+  }
+
   .text-pt-orange-light {
     color: var(--pt-orange-light);
   }
@@ -240,11 +324,19 @@
     background-color: var(--pt-orange-light);
   }
 
+  .border-pt-orange-light {
+    border-color: var(--pt-orange-light);
+  }
+
   .text-pt-orange-dark {
     color: var(--pt-orange-dark);
   }
 
   .bg-pt-orange-dark {
     background-color: var(--pt-orange-dark);
+  }
+
+  .border-pt-orange-dark {
+    border-color: var(--pt-orange-dark);
   }
 }

@@ -32,11 +32,11 @@ const props = defineProps({
   },
   titleClass: {
     type: String,
-    default: 'mt-3 text-sm font-bold tracking-wider text-pt-ink',
+    default: 'mt-3 text-sm font-bold tracking-wider text-pt-orange',
   },
   descriptionClass: {
     type: String,
-    default: 'mt-1 text-sm leading-relaxed tracking-wider text-pt-ink',
+    default: 'mt-1 text-sm leading-relaxed tracking-wider text-black',
   },
 })
 </script>
@@ -47,7 +47,7 @@ const props = defineProps({
     :class="props.cardClass"
   >
     <div
-      class="flex h-9 w-full items-center justify-center !bg-[#344B93] rounded-lg text-white"
+      class="flex h-9 w-full items-center justify-center !bg-pt-orange rounded-lg text-white"
       :class="props.iconWrapClass"
     >
       <component :is="props.icon" :class="props.iconClass" />

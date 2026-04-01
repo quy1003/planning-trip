@@ -51,6 +51,10 @@ Mở `http://localhost:8080/health` để kiểm tra.
 - `PUT /users/:id`: cập nhật user.
 - `DELETE /users/:id`: xóa user.
 
+## API auth
+- `POST /auth/register`: đăng ký tài khoản mới.
+- `POST /auth/login`: đăng nhập bằng email/password.
+
 ## Migrate database (GORM)
 Chạy migration để tạo bảng từ model:
 ```

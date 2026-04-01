@@ -35,25 +35,29 @@ function closeMenu() {
           v-for="item in navItems"
           :key="item.href"
           :href="item.href"
-          class="text-sm font-medium !text-pt-ink transition hover:text-[#4056A1]"
+          class="text-sm font-medium !text-pt-orange transition"
         >
           {{ item.label }}
         </a>
       </nav>
 
       <div class="hidden items-center gap-2 md:flex">
-        <button class="rounded-full px-4 py-2 text-sm font-medium text-pt-ink">
+        <NuxtLink
+          to="/login"
+          class="rounded-full px-4 py-2 text-sm font-medium text-pt-orange font-bold"
+        >
           Đăng nhập
-        </button>
-        <button
+        </NuxtLink>
+        <NuxtLink
+          to="/register"
           class="rounded-full !bg-pt-orange px-4 py-2 text-sm font-semibold text-white"
         >
           Bắt đầu miễn phí
-        </button>
+        </NuxtLink>
       </div>
 
       <button
-        class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[#C5CBE3] text-pt-ink md:hidden"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-pt-orange text-pt-orange md:hidden"
         type="button"
         @click="mobileMenuOpen = !mobileMenuOpen"
       >
@@ -64,30 +68,34 @@ function closeMenu() {
 
     <div
       v-if="mobileMenuOpen"
-      class="border-t border-[#C5CBE3] bg-white p-4 md:hidden"
+      class="border-t border-pt-orange bg-white p-4 md:hidden"
     >
       <nav class="flex flex-col gap-1">
         <a
           v-for="item in navItems"
           :key="item.href"
           :href="item.href"
-          class="rounded-lg px-3 py-2 text-sm font-medium !text-pt-ink hover:bg-[#EFE2BA]/55"
+          class="rounded-lg px-3 py-2 text-sm font-medium !text-pt-orange"
           @click="closeMenu"
         >
           {{ item.label }}
         </a>
       </nav>
       <div class="mt-3 grid gap-2">
-        <button
-          class="rounded-lg border border-[#C5CBE3] px-4 py-2 text-sm font-medium text-pt-ink"
+        <NuxtLink
+          to="/login"
+          class="rounded-lg border border-pt-orange px-4 py-2 text-center text-sm font-medium text-pt-orange font-bold"
+          @click="closeMenu"
         >
           Đăng nhập
-        </button>
-        <button
-          class="rounded-lg bg-pt-orange px-4 py-2 text-sm font-semibold text-white"
+        </NuxtLink>
+        <NuxtLink
+          to="/register"
+          class="rounded-lg bg-pt-orange px-4 py-2 text-center text-sm font-semibold text-white"
+          @click="closeMenu"
         >
           Bắt đầu miễn phí
-        </button>
+        </NuxtLink>
       </div>
     </div>
   </header>

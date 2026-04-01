@@ -10,6 +10,7 @@ import (
 type Env struct {
 	DatabaseURL string
 	Port        string
+	AuthSecret  string
 }
 
 const defaultPort = "8080"
@@ -30,5 +31,14 @@ func Load() (Env, error) {
 	return Env{
 		DatabaseURL: databaseURL,
 		Port:        port,
+		AuthSecret:  getOrDefault("AUTH_SECRET", "planning-trip-dev-secret"),
 	}, nil
+}
+
+func getOrDefault(value string, fallback string) string {
+	res := os.Getenv(value)
+	if res == "" {
+		return fallback
+	}
+	return res
 }

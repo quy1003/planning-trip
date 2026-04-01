@@ -19,6 +19,7 @@ import (
 	tsrepo "planning-trip-be/internal/repository/tripscheduleitem"
 	urepo "planning-trip-be/internal/repository/user"
 	asvc "planning-trip-be/internal/service/album"
+	authsvc "planning-trip-be/internal/service/auth"
 	csvc "planning-trip-be/internal/service/comment"
 	hsvc "planning-trip-be/internal/service/health"
 	nsvc "planning-trip-be/internal/service/notification"
@@ -32,6 +33,7 @@ import (
 	tssvc "planning-trip-be/internal/service/tripscheduleitem"
 	usvc "planning-trip-be/internal/service/user"
 	httpalbum "planning-trip-be/internal/transport/http/album"
+	httpauth "planning-trip-be/internal/transport/http/auth"
 	httpcomment "planning-trip-be/internal/transport/http/comment"
 	httphealth "planning-trip-be/internal/transport/http/health"
 	httpnotification "planning-trip-be/internal/transport/http/notification"
@@ -100,15 +102,17 @@ func main() {
 	tripPlaceService := tpsvc.NewService(tripPlaceRepo)
 	tripScheduleService := tssvc.NewService(tripScheduleRepo)
 	userService := usvc.NewService(userRepo)
+	authService := authsvc.NewService(userRepo, env.AuthSecret)
 
 	router := gin.New()
-	router.Use(gin.Recovery(), middleware.Logging())
+	router.Use(gin.Recovery(), middleware.Logging(), middleware.CORS())
 
 	// Health check endpoint
 	router.GET("/health", httphealth.Handler(svc))
 
 	// Register routes
 	httpalbum.RegisterRoutes(router, albumService)
+	httpauth.RegisterRoutes(router, authService)
 	httpcomment.RegisterRoutes(router, commentService)
 	httpnotification.RegisterRoutes(router, notificationService)
 	httpphoto.RegisterRoutes(router, photoService)

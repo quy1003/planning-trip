@@ -31,9 +31,9 @@ const stripItems = [
     >
       <div>
         <span
-          class="inline-flex rounded-full border border-[#C5CBE3] bg-white/80 px-3 py-1 text-xs font-semibold text-pt-ink"
+          class="inline-flex rounded-full border border-[#C5CBE3] bg-white px-3 py-1 text-xs font-bold text-pt-orange"
         >
-          Lên kế hoạch chuyến đi dễ dàng
+          • PlanningTrip •
         </span>
 
         <h1
@@ -54,12 +54,12 @@ const stripItems = [
 
         <div class="mt-7 flex flex-wrap gap-3">
           <button
-            class="rounded-[16px] !bg-[#344B93] px-6 py-3 text-sm font-semibold text-white shadow"
+            class="rounded-[16px] !bg-pt-orange px-6 py-3 text-sm font-semibold text-white shadow"
           >
             Tạo chuyến đi đầu tiên
           </button>
           <button
-            class="rounded-[16px] bg-pt-orange px-6 py-3 text-sm font-semibold text-white"
+            class="rounded-[16px] bg-white px-6 py-3 text-sm font-semibold text-pt-orange"
           >
             Xem demo
           </button>
@@ -69,12 +69,12 @@ const stripItems = [
           <article
             v-for="item in stats"
             :key="item.label"
-            class="rounded-xl border border-[#C5CBE3] bg-white/95 p-3 text-center shadow-sm"
+            class="rounded-xl border border-[#C5CBE3] bg-white/95 p-3 text-center shadow-sm !text-pt-orange"
           >
-            <p class="text-2xl font-extrabold text-[#1F2340]">
+            <p class="text-2xl font-extrabold">
               {{ item.value }}
             </p>
-            <p class="mt-1 text-xs text-[#454B70]">{{ item.label }}</p>
+            <p class="mt-1 text-xs font-semi-bold text-pt-ink">{{ item.label }}</p>
           </article>
         </div>
       </div>
