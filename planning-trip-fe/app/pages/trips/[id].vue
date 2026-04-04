@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import type { TripSummary } from "~/types/trip"
-import { tripService } from "~/services/trip.service"
+import type { TripDetail } from '~/types/trip'
+import { tripService } from '~/services/trip.service'
 
 const route = useRoute()
-const tripId = computed(() => String(route.params.id || ""))
+const tripId = computed(() => String(route.params.id || ''))
 
-const { data, pending, error } = await useAsyncData("trip-detail-" + tripId.value, () => tripService.getById(tripId.value))
+const { data, pending, error } = await useAsyncData('trip-detail-' + tripId.value, () =>
+  tripService.getById(tripId.value),
+)
 
-const trip = computed<TripSummary | null>(() => data.value ?? null)
+const trip = computed<TripDetail | null>(() => data.value ?? null)
 </script>
 
 <template>
@@ -19,7 +21,7 @@ const trip = computed<TripSummary | null>(() => data.value ?? null)
 
     <article v-else-if="trip" class="card">
       <h1>{{ trip.title }}</h1>
-      <p>{{ trip.description || "No description" }}</p>
+      <p>{{ trip.description || 'No description' }}</p>
       <small>Status: {{ trip.status }} | Visibility: {{ trip.visibility }}</small>
     </article>
 
@@ -31,6 +33,7 @@ const trip = computed<TripSummary | null>(() => data.value ?? null)
 .page {
   display: grid;
   gap: 14px;
+  padding: 88px 16px 24px;
 }
 
 .card {

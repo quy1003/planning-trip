@@ -37,6 +37,13 @@ Backend Go này phục vụ API cho ứng dụng Planning Trip trong monorepo. N
 Đảm bảo có biến môi trường:
 ```
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/planning_trip
+AUTH_SECRET=planning-trip-dev-secret
+
+# Cloudinary upload (required nếu dùng API /upload/image)
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+CLOUDINARY_UPLOAD_PATH=planning-trip
 ```
 
 ```
@@ -54,6 +61,9 @@ Mở `http://localhost:8080/health` để kiểm tra.
 ## API auth
 - `POST /auth/register`: đăng ký tài khoản mới.
 - `POST /auth/login`: đăng nhập bằng email/password.
+
+## API upload
+- `POST /upload/image`: upload ảnh lên Cloudinary (yêu cầu `Authorization: Bearer <token>`, form-data field: `file`).
 
 ## Migrate database (GORM)
 Chạy migration để tạo bảng từ model:

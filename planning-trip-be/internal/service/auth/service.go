@@ -21,8 +21,8 @@ import (
 
 var (
 	ErrInvalidInput       = errors.New("invalid input")
-	ErrInvalidCredentials = errors.New("invalid email or password")
-	ErrEmailAlreadyUsed   = errors.New("email already in use")
+	ErrInvalidCredentials = errors.New("Sai email hoặc mật khẩu")
+	ErrEmailAlreadyUsed   = errors.New("Email đã được sử dụng")
 )
 
 const tokenTTL = 24 * time.Hour

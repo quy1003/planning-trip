@@ -31,6 +31,7 @@ import (
 	tmsvc "planning-trip-be/internal/service/tripmember"
 	tpsvc "planning-trip-be/internal/service/tripplace"
 	tssvc "planning-trip-be/internal/service/tripscheduleitem"
+	uploadsvc "planning-trip-be/internal/service/upload"
 	usvc "planning-trip-be/internal/service/user"
 	httpalbum "planning-trip-be/internal/transport/http/album"
 	httpauth "planning-trip-be/internal/transport/http/auth"
@@ -45,6 +46,7 @@ import (
 	httptripmember "planning-trip-be/internal/transport/http/tripmember"
 	httptripplace "planning-trip-be/internal/transport/http/tripplace"
 	httptripscheduleitem "planning-trip-be/internal/transport/http/tripscheduleitem"
+	httpupload "planning-trip-be/internal/transport/http/upload"
 	httpuser "planning-trip-be/internal/transport/http/user"
 
 	"github.com/gin-gonic/gin"
@@ -101,11 +103,18 @@ func main() {
 	tripMemberService := tmsvc.NewService(tripMemberRepo)
 	tripPlaceService := tpsvc.NewService(tripPlaceRepo)
 	tripScheduleService := tssvc.NewService(tripScheduleRepo)
+	uploadService := uploadsvc.NewService(
+		env.CloudinaryCloudName,
+		env.CloudinaryAPIKey,
+		env.CloudinaryAPISecret,
+		env.CloudinaryUploadPath,
+	)
 	userService := usvc.NewService(userRepo)
 	authService := authsvc.NewService(userRepo, env.AuthSecret)
 
 	router := gin.New()
 	router.Use(gin.Recovery(), middleware.Logging(), middleware.CORS())
+	authMiddleware := middleware.AuthRequired(env.AuthSecret)
 
 	// Health check endpoint
 	router.GET("/health", httphealth.Handler(svc))
@@ -119,10 +128,11 @@ func main() {
 	httpphototag.RegisterRoutes(router, photoTagService)
 	httpplace.RegisterRoutes(router, placeService)
 	httpreaction.RegisterRoutes(router, reactionService)
-	httptrip.RegisterRoutes(router, tripService)
+	httptrip.RegisterRoutes(router, tripService, authMiddleware)
 	httptripmember.RegisterRoutes(router, tripMemberService)
 	httptripplace.RegisterRoutes(router, tripPlaceService)
 	httptripscheduleitem.RegisterRoutes(router, tripScheduleService)
+	httpupload.RegisterRoutes(router, uploadService, authMiddleware)
 	httpuser.RegisterRoutes(router, userService)
 
 	log.Printf("Starting planning-trip-be on port %s", env.Port)

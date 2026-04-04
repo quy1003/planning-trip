@@ -8,9 +8,13 @@ import (
 )
 
 type Env struct {
-	DatabaseURL string
-	Port        string
-	AuthSecret  string
+	DatabaseURL          string
+	Port                 string
+	AuthSecret           string
+	CloudinaryCloudName  string
+	CloudinaryAPIKey     string
+	CloudinaryAPISecret  string
+	CloudinaryUploadPath string
 }
 
 const defaultPort = "8080"
@@ -29,9 +33,13 @@ func Load() (Env, error) {
 	}
 
 	return Env{
-		DatabaseURL: databaseURL,
-		Port:        port,
-		AuthSecret:  getOrDefault("AUTH_SECRET", "planning-trip-dev-secret"),
+		DatabaseURL:          databaseURL,
+		Port:                 port,
+		AuthSecret:           getOrDefault("AUTH_SECRET", "planning-trip-dev-secret"),
+		CloudinaryCloudName:  getOrDefault("CLOUDINARY_CLOUD_NAME", ""),
+		CloudinaryAPIKey:     getOrDefault("CLOUDINARY_API_KEY", ""),
+		CloudinaryAPISecret:  getOrDefault("CLOUDINARY_API_SECRET", ""),
+		CloudinaryUploadPath: getOrDefault("CLOUDINARY_UPLOAD_PATH", "planning-trip"),
 	}, nil
 }
 
