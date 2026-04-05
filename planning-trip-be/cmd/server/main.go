@@ -101,7 +101,7 @@ func main() {
 	reactionService := rsvc.NewService(reactionRepo)
 	tripService := tsvc.NewService(tripRepo)
 	tripMemberService := tmsvc.NewService(tripMemberRepo)
-	tripPlaceService := tpsvc.NewService(tripPlaceRepo)
+	tripPlaceService := tpsvc.NewService(tripPlaceRepo, tripRepo, placeRepo)
 	tripScheduleService := tssvc.NewService(tripScheduleRepo)
 	uploadService := uploadsvc.NewService(
 		env.CloudinaryCloudName,
@@ -126,11 +126,11 @@ func main() {
 	httpnotification.RegisterRoutes(router, notificationService)
 	httpphoto.RegisterRoutes(router, photoService)
 	httpphototag.RegisterRoutes(router, photoTagService)
-	httpplace.RegisterRoutes(router, placeService)
+	httpplace.RegisterRoutes(router, placeService, authMiddleware)
 	httpreaction.RegisterRoutes(router, reactionService)
 	httptrip.RegisterRoutes(router, tripService, authMiddleware)
 	httptripmember.RegisterRoutes(router, tripMemberService)
-	httptripplace.RegisterRoutes(router, tripPlaceService)
+	httptripplace.RegisterRoutes(router, tripPlaceService, authMiddleware)
 	httptripscheduleitem.RegisterRoutes(router, tripScheduleService)
 	httpupload.RegisterRoutes(router, uploadService, authMiddleware)
 	httpuser.RegisterRoutes(router, userService)

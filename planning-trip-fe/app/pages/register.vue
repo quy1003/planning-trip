@@ -3,6 +3,8 @@ import { FetchError } from 'ofetch'
 import { MapPin, UserPlus } from 'lucide-vue-next'
 import { authService } from '~/services/auth.service'
 
+const router = useRouter()
+
 const fullName = ref('')
 const email = ref('')
 const password = ref('')
@@ -49,6 +51,7 @@ async function onSubmit() {
     if (response?.success && response?.data?.access_token) {
       localStorage.setItem('access_token', response.data.access_token)
       localStorage.setItem('current_user', JSON.stringify(response.data.user))
+      await router.push('/trips')
       status.value = 'success'
       statusMessage.value = 'Đăng ký thành công.'
       return
@@ -184,3 +187,4 @@ async function onSubmit() {
     </div>
   </section>
 </template>
+
